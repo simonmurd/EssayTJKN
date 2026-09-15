@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TJKN - Teknologi Jaringan Kabel & Nirkabel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Mengganti font dengan Montserrat untuk kesan Sporty dan Bold -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;0,900;1,700;1,900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        sport: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Pattern garis miring untuk kesan kecepatan (speed) */
+        .bg-speed-lines {
+            background-color: #f8fafc;
+            background-image: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 15px,
+                rgba(0, 0, 0, 0.02) 15px,
+                rgba(0, 0, 0, 0.02) 30px
+            );
+        }
+        
+        /* Utility untuk elemen miring (sporty shape) */
+        .skew-box {
+            transform: skewX(-12deg);
+        }
+        .unskew-box {
+            transform: skewX(12deg);
+        }
+    </style>
+</head>
+<body class="bg-speed-lines text-slate-800 font-sans antialiased min-h-screen flex flex-col relative selection:bg-orange-500 selection:text-white">
+
+    <!-- Navbar Bersih & Dinamis -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b-4 border-slate-900 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="h-12 w-12 bg-slate-900 text-white flex items-center justify-center skew-box">
+                    <!-- Icon Petir/Kecepatan (Sporty) -->
+                    <svg class="w-7 h-7 unskew-box text-lime-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <div class="leading-none">
+                    <span class="text-2xl font-black font-sport italic tracking-wider text-slate-900 uppercase">TJKN <span class="text-orange-500">PRO</span></span>
+                    <span class="block text-[11px] text-slate-500 font-bold tracking-widest uppercase mt-1">Network Performance Lab</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-3 text-xs font-bold font-sans">
+                <div class="flex items-center gap-2 px-4 py-2 bg-slate-100 border-2 border-slate-200 text-slate-700 skew-box rounded-sm">
+                    <span class="unskew-box flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 bg-lime-500 rounded-full animate-pulse"></span>
+                        SYSTEM ONLINE
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section (Energetik) -->
+    <header class="relative pt-16 pb-20 lg:pt-24 lg:pb-28 overflow-hidden bg-slate-900 text-white">
+        <!-- Aksen bentuk geometris di background -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-orange-500 skew-box translate-x-32 -z-0 opacity-90 hidden md:block"></div>
+        <div class="absolute bottom-0 left-0 w-full h-4 bg-lime-400 z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-start">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 text-lime-400 text-xs font-bold mb-6 uppercase tracking-widest skew-box">
+                <span class="unskew-box">🔥 KINERJA JARINGAN MAKSIMAL</span>
+            </div>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black font-sport italic tracking-tighter mb-4 leading-none uppercase">
+                Pusat Lembar Kerja <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Kabel & Nirkabel</span>
+            </h1>
+            <p class="text-slate-300 text-base sm:text-lg max-w-2xl mb-8 font-medium leading-relaxed">
+                Tingkatkan skill Anda. Akses modul interaktif untuk transmisi Fiber Optic, gelombang radio, arsitektur Wireless, hingga optimasi keamanan tingkat tinggi.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-10 gap-4">
+            <div>
+                <h2 class="text-2xl sm:text-3xl font-black font-sport italic text-slate-900 tracking-tight uppercase flex items-center gap-3">
+                    MODUL LATIHAN TERSEDIA
+                </h2>
+                <p class="text-sm font-medium text-slate-500 mt-1">Pilih sesi latihan di bawah ini untuk memulai simulasi.</p>
+            </div>
+            <div class="text-sm font-bold px-4 py-2 bg-slate-900 text-white skew-box">
+                <span class="unskew-box">12 SESI AKTIF</span>
+            </div>
+        </div>
+
+        <div id="cardGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Kartu modul akan digenerate secara otomatis -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t-4 border-slate-900 py-8 text-center text-sm font-bold text-slate-500 uppercase tracking-widest">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center gap-3">
+            <div class="flex space-x-4 text-slate-400 mb-2 font-sport italic text-lg">
+                <span class="hover:text-orange-500 transition-colors">#FIBER</span>
+                <span class="hover:text-lime-500 transition-colors">#WIRELESS</span>
+                <span class="hover:text-blue-500 transition-colors">#WPA3</span>
+            </div>
+            <p>&copy; 2026 TJKN PRO ATHLETICS. ALL SYSTEMS GO.</p>
+        </div>
+    </footer>
+
+    <script>
+        // File rujukan LKPD Teknologi Jaringan Kabel dan Nirkabel
+        const tjknFiles = [
+            "lkpd_tjkn_1.html",  
+            "lkpd_tjkn_2.html",  
+            "lkpd_tjkn_3.html",  
+            "lkpd_tjkn_4.html",  
+            "lkpd_tjkn_5.html",  
+            "lkpd_tjkn_6.html",  
+            "lkpd_tjkn_7.html",  
+            "lkpd_tjkn_8.html",  
+            "lkpd_tjkn_9.html",  
+            "lkpd_tjkn_10.html", 
+            "lkpd_tjkn_11.html", 
+            "lkpd_tjkn_12.html"  
+        ];
+
+        // Daftar Materi TJKN
+        const tjknTopics = [
+            "Perancangan & Struktur Jaringan Kabel (Copper & Fiber Optic)",
+            "Karakteristik Media Transmisi Kabel (UTP, STP, Coaxial & Optik)",
+            "Instalasi & Penyambungan Kabel Fiber Optic (Fusion Splicing)",
+            "Pengujian Media Jaringan Kabel (OTDR & Cable Tester)",
+            "Konsep Gelombang Radio & Frekuensi Nirkabel (2.4 GHz & 5 GHz)",
+            "Standar Jaringan Nirkabel (IEEE 802.11a/b/g/n/ac/ax)",
+            "Perencanaan & Site Survey Jaringan Nirkabel (Heatmap Analysis)",
+            "Konfigurasi Access Point & Mode Operasi Wireless",
+            "Pengenalan Media Fiber Optik & Spesifikasi Kabel",
+            "Teknik Penyambungan Kabel Optik (Splicing & Termination)",
+            "Pengukuran, Pengujian Sinyal & Troubleshooting Optik",
+            "Perancangan & Arsitektur Jaringan FTTH (Fiber to the Home)"
+        ];
+
+        // Skema Warna Sporty per Kartu
+        const sportStyles = [
+            { accent: "bg-orange-500", text: "text-orange-600", btn: "bg-orange-500 hover:bg-slate-900 text-white", border: "border-orange-500" },
+            { accent: "bg-blue-600", text: "text-blue-600", btn: "bg-blue-600 hover:bg-slate-900 text-white", border: "border-blue-600" },
+            { accent: "bg-lime-500", text: "text-lime-600", btn: "bg-lime-500 hover:bg-slate-900 text-slate-900 hover:text-white", border: "border-lime-500" },
+            { accent: "bg-red-500", text: "text-red-500", btn: "bg-red-500 hover:bg-slate-900 text-white", border: "border-red-500" }
+        ];
+
+        const grid = document.getElementById('cardGrid');
+
+        for (let i = 1; i <= 12; i++) {
+            const card = document.createElement('div');
+            const targetFile = tjknFiles[i-1];
+            const style = sportStyles[(i-1) % sportStyles.length];
+
+            card.className = `group bg-white rounded-none border-b-4 ${style.border} shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between overflow-hidden`;
+            
+            card.innerHTML = `
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="${style.accent} text-white px-3 py-1 skew-box">
+                            <span class="unskew-box block font-sport font-black italic text-lg leading-none">0${i < 10 ? '0' + i : i}</span>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-1 rounded-sm uppercase tracking-wider">${targetFile}</span>
+                    </div>
+                    <h3 class="text-xl font-black font-sport italic text-slate-900 uppercase mb-2 group-hover:${style.text} transition-colors leading-tight">Sesi ${i}</h3>
+                    <p class="text-slate-600 text-sm font-medium mb-6 line-clamp-3 leading-relaxed">${tjknTopics[i-1]}</p>
+                </div>
+                
+                <a href="${targetFile}" class="w-full py-4 px-6 text-sm font-black font-sport italic uppercase tracking-wider transition-all duration-300 flex items-center justify-between group/btn ${style.btn}">
+                    <span>MULAI LATIHAN</span>
+                    <svg class="w-5 h-5 transform group-hover/btn:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                </a>
+            `;
+            grid.appendChild(card);
+        }
+    </script>
+</body>
+</html>
